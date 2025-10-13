@@ -1,92 +1,59 @@
 #root {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1rem;
+  text-align: left;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-/* 站立袋报价器样式 */
 .app {
+  font-family: "Microsoft YaHei", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
 }
 
 .app h1 {
   text-align: center;
-  color: #2c3e50;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
+  margin-bottom: 22px;
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.main-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* 上下布局 */
+.vertical-layout {
+  display: flex;
+  flex-direction: column;
   gap: 30px;
-  min-height: 80vh;
 }
 
 .input-section,
-.output-section {
-  background: #f8f9fa;
-  padding: 25px;
+.result-section {
+  background: #fff;
+  border: 1px solid #efefef;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .input-section h2,
-.output-section h2 {
-  color: #34495e;
-  margin-bottom: 25px;
-  font-size: 1.8rem;
+.result-section h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
   border-bottom: 3px solid #3498db;
   padding-bottom: 10px;
 }
 
 .section {
-  margin-bottom: 30px;
-  background: white;
+  margin-bottom: 25px;
   padding: 20px;
+  background: #f8f9fa;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  animation: fadeIn 0.5s ease-in;
+  border-left: 4px solid #3498db;
 }
 
 .section h3 {
@@ -95,171 +62,224 @@
   font-size: 1.3rem;
 }
 
+/* 六列网格 - 更适合宽屏 */
+.grid-six {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+/* 输入组 */
 .input-group {
-  margin-bottom: 15px;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .input-group label {
-  min-width: 120px;
-  font-weight: 500;
-  color: #34495e;
+  font-weight: 600;
+  color: #444;
+  font-size: 14px;
 }
 
 .input-group input,
 .input-group select {
-  flex: 1;
+  width: 100%;
   padding: 8px 12px;
   border: 2px solid #ddd;
   border-radius: 6px;
   font-size: 14px;
   transition: border-color 0.3s ease;
+  background: white;
 }
 
 .input-group input:focus,
 .input-group select:focus {
   outline: none;
   border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.15);
 }
 
-.material-layer {
-  background: #f1f2f6;
-  padding: 15px;
-  margin-bottom: 15px;
+.hint {
+  font-size: 12px;
+  color: #777;
+  margin-top: 3px;
+}
+
+/* 材料层网格 */
+.layers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: white;
   border-radius: 6px;
-  border-left: 4px solid #3498db;
+  border: 1px solid #e0e0e0;
 }
 
-.material-layer h4 {
-  margin: 0 0 15px 0;
-  color: #2c3e50;
-  font-size: 1.1rem;
+.layer-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  min-width: 45px;
 }
 
-.add-btn,
-.remove-btn {
-  background: #27ae60;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.add-btn:hover {
-  background: #229954;
+.layer-item select {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
 }
 
 .remove-btn {
   background: #e74c3c;
-  margin-top: 10px;
+  color: white;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .remove-btn:hover {
   background: #c0392b;
 }
 
-.result-container {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.result-section {
-  margin-bottom: 25px;
-  padding: 15px;
-  background: #f8f9fa;
+.add-layer-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 15px;
   border-radius: 6px;
-  border-left: 4px solid #3498db;
+  cursor: pointer;
+  font-size: 13px;
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  font-weight: 500;
 }
 
-.result-section h3 {
-  color: #2c3e50;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
+.add-layer-btn:hover {
+  background: #229954;
 }
 
-.result-section p {
-  margin: 8px 0;
-  color: #34495e;
+/* 报价高亮区 */
+.highlight {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.price-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.price-item {
+  text-align: center;
+}
+
+.price-label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.price-value {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+/* 明细网格 */
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
   font-size: 14px;
 }
 
-.material-result {
-  background: white;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+.detail-item span:first-child {
+  color: #666;
+  font-weight: 500;
 }
 
-.total-cost {
-  font-weight: bold;
-  color: #27ae60 !important;
-  font-size: 16px !important;
-}
-
-.single-cost {
-  font-weight: bold;
-  color: #2980b9 !important;
-  font-size: 18px !important;
-}
-
-.final-result {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-left-color: #5a67d8;
-}
-
-.final-result h3 {
-  color: white;
-}
-
-.final-result p {
-  color: white;
+.detail-item span:last-child {
+  font-weight: 600;
+  color: #2c3e50;
 }
 
 /* 响应式设计 */
 @media (max-width: 1200px) {
-  .main-container {
+  .grid-six {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .layers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .price-row {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .app {
-    padding: 10px;
-  }
-  
-  .input-section,
-  .output-section {
     padding: 15px;
   }
   
-  .input-group {
-    flex-direction: column;
-    align-items: stretch;
+  .grid-six {
+    grid-template-columns: repeat(2, 1fr);
   }
   
-  .input-group label {
-    min-width: auto;
-    margin-bottom: 5px;
+  .layers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-section,
+  .result-section {
+    padding: 20px;
   }
 }
 
-/* 动画效果 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@media (max-width: 480px) {
+  .grid-six {
+    grid-template-columns: 1fr;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .price-value {
+    font-size: 24px;
   }
 }

@@ -123,6 +123,35 @@
   border: 1px solid #e0e0e0;
 }
 
+.lamination-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.lamination-step {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.lamination-step-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.lamination-step-materials {
+  margin-left: 4px;
+  font-weight: 500;
+  color: #7f8c8d;
+}
+
 .layer-label {
   font-size: 13px;
   font-weight: 600;
@@ -171,6 +200,36 @@
 
 .add-layer-btn:hover {
   background: #229954;
+}
+
+/* 复合次数信息 */
+.lamination-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  padding: 12px 15px;
+  background: #e8f4f8;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.info-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+.info-note {
+  font-size: 12px;
+  color: #7f8c8d;
+  font-style: italic;
 }
 
 /* 报价高亮区 */
@@ -240,6 +299,10 @@
   .layers-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .lamination-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
   
   .detail-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -261,6 +324,10 @@
   }
   
   .layers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lamination-list {
     grid-template-columns: 1fr;
   }
   

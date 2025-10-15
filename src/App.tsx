@@ -374,7 +374,6 @@ export default function App() {
   const updatePlateCoverage = (id: number, cov: PrintCoverage) => {
     setPrintPlates(prev => prev.map(p => (p.id === id ? { ...p, coverage: cov } : p)));
   };
-  const isCPPorPE = (materialKey: string) => materialKey.startsWith("CPP") || materialKey.startsWith("PE");
 
   /** —— UI条件输入显示 —— */
   const showBottomInsert = bagType === "站立袋" || bagType === "八边封袋";
@@ -385,7 +384,7 @@ export default function App() {
   /** ========= 渲染 ========= */
   return (
     <div style={{ padding: 16, maxWidth: 1200, margin: "0 auto" }}>
-      <h1>📦 包装袋自动报价系统（多袋型）</h1>
+      <h1>📦 包装袋自动报价系统</h1>
 
       {/* 上：输入区 */}
       <div className="section" style={{ border: "1px solid #eee", padding: 16, borderRadius: 12, marginBottom: 16 }}>
